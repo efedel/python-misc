@@ -1,0 +1,7 @@
+Initial proof-of-concept for BGO class hierarchy.
+
+Replaced with contents of 'python' directory
+
+NOTE: BGO alpha was mainly used to test the original libdisasm python
+      module (.so via SWIG). The beta version of BGO uses the pure-python
+      libdisasm module.

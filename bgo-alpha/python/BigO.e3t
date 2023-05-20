@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-3.7.dtd">
+<!-- Tasks file for project BigO -->
+<!-- Saved: 2005-11-15, 22:53:16 -->
+<Tasks version="3.7">
+  <Task priority="1" completed="0">
+    <Description>TODO: clean order_by_col</Description>
+    <Created>2005-11-15, 01:40:27</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>181</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: pwquote</Description>
+    <Created>2005-11-15, 01:40:27</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>273</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: perform insert, get last_id</Description>
+    <Created>2005-11-15, 01:40:27</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>341</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: perform delete</Description>
+    <Created>2005-11-15, 01:40:27</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>400</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: this can only be used to change the</Description>
+    <Created>2005-11-15, 01:40:31</Created>
+    <Resource>
+      <Filename>
+        <Name>BGInstruction.py</Name>
+      </Filename>
+      <Linenumber>140</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: clean order_by_col</Description>
+    <Created>2005-11-15, 01:29:48</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>181</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: pwquote</Description>
+    <Created>2005-11-15, 01:29:48</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>273</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: perform insert, get last_id</Description>
+    <Created>2005-11-15, 01:29:48</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>341</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: perform delete</Description>
+    <Created>2005-11-15, 01:29:48</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>400</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: this can only be used to change the</Description>
+    <Created>2005-11-15, 01:29:50</Created>
+    <Resource>
+      <Filename>
+        <Name>BGInstruction.py</Name>
+      </Filename>
+      <Linenumber>140</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: add operations on DB representation here</Description>
+    <Created>2005-11-14, 02:53:51</Created>
+    <Resource>
+      <Filename>
+        <Name>BGDisasm.py</Name>
+      </Filename>
+      <Linenumber>19</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: some global prefs for disassembler?</Description>
+    <Created>2005-10-19, 12:47:21</Created>
+    <Resource>
+      <Filename>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>127</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: filehdr doubles as 'unknown'</Description>
+    <Created>2005-10-19, 12:47:21</Created>
+    <Resource>
+      <Filename>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>13</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: java const pool field, attr, ifaces all symbols</Description>
+    <Created>2005-10-19, 12:47:21</Created>
+    <Resource>
+      <Filename>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>20</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: change this to /usr/share/bgo</Description>
+    <Created>2005-10-09, 06:35:04</Created>
+    <Resource>
+      <Filename>
+        <Dir>database</Dir>
+        <Name>postgres.py</Name>
+      </Filename>
+      <Linenumber>18</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: write XML file for each hash</Description>
+    <Created>2005-10-09, 06:52:44</Created>
+    <Resource>
+      <Filename>
+        <Dir>database</Dir>
+        <Name>xml.py</Name>
+      </Filename>
+      <Linenumber>17</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: write XML file for each hash</Description>
+    <Created>2005-10-09, 14:01:36</Created>
+    <Resource>
+      <Filename>
+        <Dir>database</Dir>
+        <Name>dict.py</Name>
+      </Filename>
+      <Linenumber>19</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>FIXME: register aliasing seems broken</Description>
+    <Created>2005-10-17, 11:22:31</Created>
+    <Resource>
+      <Filename>
+        <Dir>cpu</Dir>
+        <Name>x86.py</Name>
+      </Filename>
+      <Linenumber>529</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: make sure this is correct! do we have to cast</Description>
+    <Created>2005-10-17, 11:22:31</Created>
+    <Resource>
+      <Filename>
+        <Dir>cpu</Dir>
+        <Name>x86.py</Name>
+      </Filename>
+      <Linenumber>546</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: some global prefs for disassembler?</Description>
+    <Created>2005-10-19, 02:55:15</Created>
+    <Resource>
+      <Filename>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>134</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: filehdr doubles as 'unknown'</Description>
+    <Created>2005-10-19, 02:55:15</Created>
+    <Resource>
+      <Filename>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>15</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: java const pool field, attr, ifaces all symbols</Description>
+    <Created>2005-10-19, 02:55:15</Created>
+    <Resource>
+      <Filename>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>22</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: some global prefs for disassembler?</Description>
+    <Created>2005-11-08, 13:00:36</Created>
+    <Resource>
+      <Filename>
+        <Dir>primitives</Dir>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>125</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: filehdr doubles as 'unknown'</Description>
+    <Created>2005-11-08, 13:00:36</Created>
+    <Resource>
+      <Filename>
+        <Dir>primitives</Dir>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>13</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: java const pool field, attr, ifaces all symbols</Description>
+    <Created>2005-11-08, 13:00:36</Created>
+    <Resource>
+      <Filename>
+        <Dir>primitives</Dir>
+        <Name>section.py</Name>
+      </Filename>
+      <Linenumber>20</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>FIXME: register aliasing seems broken</Description>
+    <Created>2005-11-09, 20:34:09</Created>
+    <Resource>
+      <Filename>
+        <Dir>disasm_modules</Dir>
+        <Name>x86.py</Name>
+      </Filename>
+      <Linenumber>808</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: make sure this is correct! do we have to cast</Description>
+    <Created>2005-11-09, 20:34:09</Created>
+    <Resource>
+      <Filename>
+        <Dir>disasm_modules</Dir>
+        <Name>x86.py</Name>
+      </Filename>
+      <Linenumber>825</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: name operand</Description>
+    <Created>2005-11-09, 20:34:09</Created>
+    <Resource>
+      <Filename>
+        <Dir>disasm_modules</Dir>
+        <Name>x86.py</Name>
+      </Filename>
+      <Linenumber>839</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: FIXME</Description>
+    <Created>2005-11-09, 20:34:09</Created>
+    <Resource>
+      <Filename>
+        <Dir>disasm_modules</Dir>
+        <Name>x86.py</Name>
+      </Filename>
+      <Linenumber>993</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: classes for section types?</Description>
+    <Created>2005-11-09, 21:17:14</Created>
+    <Resource>
+      <Filename>
+        <Name>BGSection.py</Name>
+      </Filename>
+      <Linenumber>10</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: remove this?</Description>
+    <Created>2005-11-13, 23:47:11</Created>
+    <Resource>
+      <Filename>
+        <Name>dbobject.py</Name>
+      </Filename>
+      <Linenumber>68</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: this MUST be overridden by subclasses, and</Description>
+    <Created>2005-11-13, 23:47:11</Created>
+    <Resource>
+      <Filename>
+        <Name>dbobject.py</Name>
+      </Filename>
+      <Linenumber>83</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: XML</Description>
+    <Created>2005-11-13, 23:51:05</Created>
+    <Resource>
+      <Filename>
+        <Dir>file_modules</Dir>
+        <Name>ELF.py</Name>
+      </Filename>
+      <Linenumber>92</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: XML</Description>
+    <Created>2005-11-13, 23:51:05</Created>
+    <Resource>
+      <Filename>
+        <Dir>file_modules</Dir>
+        <Name>ELF.py</Name>
+      </Filename>
+      <Linenumber>234</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: determine if any of these are useful</Description>
+    <Created>2005-11-13, 23:51:05</Created>
+    <Resource>
+      <Filename>
+        <Dir>file_modules</Dir>
+        <Name>ELF.py</Name>
+      </Filename>
+      <Linenumber>661</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: elf sections and segments are different from</Description>
+    <Created>2005-11-13, 23:51:05</Created>
+    <Resource>
+      <Filename>
+        <Dir>file_modules</Dir>
+        <Name>ELF.py</Name>
+      </Filename>
+      <Linenumber>581</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: FIX layer handling</Description>
+    <Created>2005-11-14, 00:29:56</Created>
+    <Resource>
+      <Filename>
+        <Name>BGFile.py</Name>
+      </Filename>
+      <Linenumber>73</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: container</Description>
+    <Created>2005-11-14, 00:29:56</Created>
+    <Resource>
+      <Filename>
+        <Name>BGFile.py</Name>
+      </Filename>
+      <Linenumber>213</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: file_image: self._image</Description>
+    <Created>2005-11-14, 00:29:56</Created>
+    <Resource>
+      <Filename>
+        <Name>BGFile.py</Name>
+      </Filename>
+      <Linenumber>214</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: add operations on DB representation here</Description>
+    <Created>2005-11-14, 01:15:24</Created>
+    <Resource>
+      <Filename>
+        <Name>BGDisasm.py</Name>
+      </Filename>
+      <Linenumber>19</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: FIX</Description>
+    <Created>2005-11-14, 16:40:28</Created>
+    <Resource>
+      <Filename>
+        <Name>BGOperand.py</Name>
+      </Filename>
+      <Linenumber>360</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: self._db_id is row in insn_op_def_map</Description>
+    <Created>2005-11-14, 16:40:28</Created>
+    <Resource>
+      <Filename>
+        <Name>BGOperand.py</Name>
+      </Filename>
+      <Linenumber>23</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>FIXME: is this correct? what if value &lt; 256?</Description>
+    <Created>2005-11-14, 16:40:55</Created>
+    <Resource>
+      <Filename>
+        <Dir>primitives</Dir>
+        <Name>operand.py</Name>
+      </Filename>
+      <Linenumber>450</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: write VM interface!</Description>
+    <Created>2005-11-14, 16:40:55</Created>
+    <Resource>
+      <Filename>
+        <Dir>primitives</Dir>
+        <Name>operand.py</Name>
+      </Filename>
+      <Linenumber>659</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: write VM interface!</Description>
+    <Created>2005-11-14, 16:40:55</Created>
+    <Resource>
+      <Filename>
+        <Dir>primitives</Dir>
+        <Name>operand.py</Name>
+      </Filename>
+      <Linenumber>725</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: clean order_by_col</Description>
+    <Created>2005-11-14, 18:03:29</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>182</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: pwquote</Description>
+    <Created>2005-11-14, 18:03:29</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>274</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: perform insert, get last_id</Description>
+    <Created>2005-11-14, 18:03:29</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>342</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>TODO: perform delete</Description>
+    <Created>2005-11-14, 18:03:29</Created>
+    <Resource>
+      <Filename>
+        <Name>bgdb.py</Name>
+      </Filename>
+      <Linenumber>401</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="0">
+    <Description>NOTE: this can only be used to change the</Description>
+    <Created>2005-11-14, 18:41:53</Created>
+    <Resource>
+      <Filename>
+        <Name>BGInstruction.py</Name>
+      </Filename>
+      <Linenumber>140</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>

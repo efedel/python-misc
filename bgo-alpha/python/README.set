@@ -1,0 +1,864 @@
+
+				BGO Set
+			Finite and Infinite Sets for Python
+
+===============================================================================
+Supported operations
+
+    Membership			x in A
+    Returns True if x is an element in A
+
+    Union			A + B
+    Returns the set of all elements in A and all elements in B
+
+    Intersection		A * B
+    Returns the set of all elements in A that are also in B
+
+    Difference			A - B
+    Returns the set of all elements in A that are not also in B
+
+    Symmetric Difference	A ^ B
+    Returns all elements in A that are not also in B, and all elements
+    in B that are not also in A
+
+    Complement			~A
+    Returns the inverse of set A
+
+    Equivalent			A == B
+    Returns True if A and B are equivalent
+
+    Disjoint			A.disjoint(B)
+    Returns True if A and B have no elements in common
+
+    Direct Product		A.direct_product(B)
+    Returns a set of all possible tuples (x, y) where x in A and
+    y in B
+
+    Power			A.P()
+    Returns the set of all possible subsets of A
+
+    Map				A.map(map_function)
+    Returns all elements in A with the function map_func applied to
+    them
+    
+    Cardinality			len(A)
+    Returns the number of elements in A
+
+    Iteration			for i in A:
+    					<block>
+    Performs code in <block> on each element in A
+    
+
+
+
+===============================================================================
+Usage
+
+To use the set module:
+
+	* import the set module
+
+		>>> import set
+
+To create a finite set:
+
+	* create a set object and add objects to it:
+
+		>>> s = set.Set()
+		>>> s.add(1)
+		>>> s.add(2)
+		>>> s.add(3)
+		>>> s.add(4)
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4} : {} }
+
+	* create a set object from a list:
+
+		>>> s = set.Set( [1, 2, 3, 4] )
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4} : {} }
+
+	* create a set object from a tuple:
+
+		>>> s = set.Set( (1, 2, 3, 4) )
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4} : {} }
+
+	* create a set object from a dictionary:
+
+		>>> s = set.Set( {1:1, 2:2, 3:3, 4:4} )
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4} : {} }
+
+	* create a set object from a function:
+
+		>>> def set_generator():
+		...     return (1, 2, 3, 4)
+		... 
+		>>> s = set.Set( set_generator )
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4} : {} }
+
+
+To create a (potentially) infinite set:
+
+	* create a set object with a lambda
+
+		>>> s = set.Set(expr=lambda x: x > 0 )
+		>>> 1 in s
+		True
+		>>> 0 in s
+		False
+
+	* create a set object with a function 
+
+		>>> def greater_than_0(x):
+		...     return x > 0
+		... 
+		>>> s = set.Set(expr=greater_than_0)
+		>>> 1 in s
+		True
+		>>> 0 in s
+		False
+
+	* create a set object with a lambda/function and excluded members:
+
+		>>> s = set.Set(expr=lambda x: x > 0, exclude=(1, 2, 3))
+		>>> 1 in s
+		False
+		>>> 0 in s
+		False
+		>>> 4 in s
+		True
+
+
+To create a set of objects:
+
+	* create set with a custom get_key function:
+
+		>>> def word_count(string):
+		...     return len(string.split(' '))
+		... 
+		>>> s = set.Set(('a string', '
+		>>> s = set.Set(('a string', 'a longer string'), \
+	        get_key=word_count)
+		>>> print s 
+		{ None : {2: 'a string', 3: 'a longer string'} : {} }
+
+
+To add an element to a set:
+
+	* use the dictionary assign operator:
+
+		>>> s = set.Set( (1, 2, 3, 4, 5, 6, 7) )
+		>>> s[8] = 8
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8} : {} }
+
+	* use the add() method:
+
+		>>> s.add(9)
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 
+		9: 9} : {} }
+
+
+To remove an element from a set:
+
+	* use the python builtin del function:
+
+		>>> s = set.Set((1,2,3,4,5,6,7,8,9))
+		>>> del s[9]
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8} : {} }
+
+	* use the remove() method:
+
+		>>> s.remove(8)
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7} : {} }
+		
+
+To count the number of elements in (or cardinality of) a set:
+
+	* use python's builtin len() function
+
+		>>> s = set.Set( (1, 2, 3, 4, 5, 6, 7) )
+		>>> len(s)
+		7
+
+	* use the count() method
+
+		>>> s.count()
+		7
+
+	* use the card() method
+
+		>>> s.card()
+		7
+
+	Note that potentially infinite sets cannot be counted;
+	only finite sets can be counted:
+
+		>>> s = set.Set((-1, -2, -3), expr=lambda x: x > 0)
+		>>> len(s)
+		Traceback (most recent call last):
+		  File "<stdin>", line 1, in ?
+		  File "set.py", line 738, in __len__
+		    raise AssertionError, \
+		AssertionError: An infinite set has no length
+
+
+To test for membership in a set:
+
+	* use python's builtin 'in' command:
+
+		>>> s = set.Set( (1, 2, 3, 4, 5, 6, 7) )
+		>>> 0 in s
+		False
+		>>> 1 in s
+		True
+		>>> -1 not in s
+		True
+		>>> 4 not in s
+		False
+
+	* use the contains() method:
+
+		>>> s = set.Set( (1, 2, 3, 4, 5, 6, 7) )
+		>>> s.contains(0)
+		False
+		>>> s.contains(1)
+		True
+
+
+To test if two sets are equal:
+
+	* use the == operator
+
+		>>> s = set.Set( (1, 2, 3, 4, 5))
+		>>> t = set.Set( (1, 3, 5))
+		>>> u = set.Set( (1, 2, 3, 4, 5))
+		>>> s == t
+		False
+		>>> s == u
+		True
+
+
+	* use the != operator
+
+		>>> s != t
+		True
+		>>> s != u
+		False
+
+	* use the equivalent() method
+
+		>>> s.equivalent(t)
+		False
+		>>> s.equivalent(u)
+		True
+
+
+To test if two sets are disjoint:
+
+	* use the disjoint() method
+
+		>>> s = set.Set((1, 2, 3, 4, 5, 6, 7))
+		>>> t = set.Set((1, 3, 5))
+		>>> u = set.Set((10, 12, 14))
+		>>> s.disjoint(t)
+		False
+		>>> s.disjoint(u)
+		True
+
+
+To generate a proper subset of a set:
+
+	* use the subset() method:
+
+		>>> s = set.Set((1,2,3,4))
+		>>> t = s.subset()
+		>>> t.remove(2)
+		>>> t.add(6)
+		>>> print t
+		{ None : {1: 1, 3: 3, 4: 4, 6: 6} : {} }
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 6: 6} : {} }
+
+	* use the subset() method and a function to select members:
+
+		>>> s = set.Set((1,2,3,4))
+		>>> t = s.subset(lambda x: x%2)
+		>>> t.add(5)
+		>>> print t
+		{ None : {1: 1, 3: 3, 5: 5} : {} }
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+
+	* create a difference set:
+
+		>>> s = set.Set((1,2,3,4))
+		>>> t = set.Set((2,4))
+		>>> u = s - t
+		>>> u.add(6)
+		>>> print u
+		{ None : {1: 1, 3: 3, 6: 6} : {} }
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 6: 6} : {} }
+
+
+To test if one set is a proper subset of another:
+
+	* use the is_proper_subset() method:
+
+		>>> s = set.Set((1,2,3,4))
+		>>> t = s.subset(lambda x: x%2)
+		>>> s.is_proper_subset(t)
+		True
+		>>> t.is_proper_subset(s)
+		False
+
+
+To test if one set is a proper superset of another:
+
+	* use the is_proper_superset() method:
+
+		>>> s = set.Set((1,2,3,4))
+		>>> t = s.subset(lambda x: x%2)
+		>>> t.is_proper_superset(s)
+		True
+		>>> s.is_proper_superset(t)
+		False
+
+
+To test if one set is a subset of another:
+
+	* use the < operator:
+		>>> s = set.Set( (1, 2, 3, 4, 5))
+		>>> t = set.Set( (1, 3, 5))
+		>>> u = set.Set( (1, 2, 3, 4, 5))
+		>>> s < t
+		False
+		>>> t < s
+		True
+
+	* use the <= operator:
+		>>> s <= t
+		False
+		>>> s <= u
+		True
+
+	* use the issubset() method:
+		>>> t.issubset(s)
+		False
+		>>> s.issubset(t)
+		True
+
+	* use the issubset_or_equiv() method:
+		>>> s.issubset_or_equiv(t)
+		True
+		>>> t.issubset_or_equiv(u)
+		False
+		>>> s.issubset_or_equiv(u)
+		True
+
+
+To test if one set is a superset of another:
+
+	* use the > operator:
+
+		>>> s = set.Set( (1, 2, 3, 4, 5))
+		>>> t = set.Set( (1, 3, 5))
+		>>> u = set.Set( (1, 2, 3, 4, 5))
+		>>> s > t
+		True
+		>>> s > u
+		False
+
+	* use the >= operator:
+
+		>>> s >= u
+		True
+		>>> t >= u
+		False
+
+	* use the issuperset() method:
+
+		>>> s.issuperset(u)
+		False
+		>>> t.issuperset(s)
+		True
+
+	* use the issuperset_or_equiv() method:
+
+		>>> s.issuperset_or_equiv(t)
+		False
+		>>> s.issuperset_or_equiv(u)
+		True
+
+
+To generate a set containing the union of two sets:
+	
+	* use the + operator:
+	
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> u = s + t
+		>>> print u
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+
+	* use the | operator:
+
+		>>> u = s | t
+		>>> print u
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+
+	* use the union() method:
+
+		>>> u = s.union(t)
+		>>> print u
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+
+	Note: the resulting set becomes a proper superset of the
+	two input sets.
+
+
+To generate a set containing the intersection of two sets:
+	
+	* use the * operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> u = s * t
+		>>> print u
+		{ None : {3: 3} : {} }
+
+	* use the & operator:
+
+		>>> u = s & t
+		>>> print u
+		{ None : {3: 3} : {} }
+
+	* use the intersection() method:
+
+		>>> u = s.intersection(t)
+		>>> print u
+		{ None : {3: 3} : {} }
+
+
+To generate a set containing the difference of two sets:
+	
+	* use the - operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> u = s - t
+		>>> print u
+		{ None : {1: 1, 2: 2} : {} }
+
+	* use the difference() method:
+
+		>>> u = s.difference(t)
+		>>> print u
+		{ None : {1: 1, 2: 2} : {} }
+
+
+To generate a set containing the symmetric difference of two sets:
+	
+	* use the ^ operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> u = s ^ t
+		>>> print u
+		{ None : {1: 1, 2: 2, 4: 4, 5: 5} : {} }
+
+	* use the symmetric_difference() method:
+
+		>>> u = s.symmetric_difference(t)
+		>>> print u
+		{ None : {1: 1, 2: 2, 4: 4, 5: 5} : {} }
+
+
+To generate a set containing the complement of a set:
+
+	* use the ~ operator:
+
+		>>> t = set.Set(expr=lambda x: x > 10)
+		>>> 20 in t
+		True
+		>>> u = ~t
+		>>> 20 in u
+		False
+
+	* use the complement() method:
+
+		>>> s = set.Set((1,2,3))
+		>>> 3 in s
+		True
+		>>> u = s.complement()
+		>>> 3 in u
+		False
+		>>> print u
+		{ None : {} : {1: 1, 2: 2, 3: 3} }
+
+
+To generate a set containing the direct product of two sets:
+
+	* use the direct_product() method:
+
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> u = s.direct_product(t)
+		>>> print u
+		{ None : {'(1, 5)': (1, 5), '(2, 5)': (2, 5), '(3, 4)': (3, 4),
+		'(2, 4)': (2, 4), '(3, 5)': (3, 5), '(1, 3)': (1, 3), 
+		'(2, 3)': (2, 3), '(3, 3)': (3, 3), '(1, 4)': (1, 4)} : {} }
+
+	Note that potentially infinite sets cannot have a direct product:
+
+		>>> s = set.Set((-1,-2,-3), expr=lambda x: x > 0)
+		>>> t = set.Set(('a', 'b', 'c'))
+		>>> u = s.direct_product(t)
+		Traceback (most recent call last):
+		  File "<stdin>", line 1, in ?
+		  File "set.py", line 510, in direct_product
+		    raise AssertionError, "An infinite set cannot be mapped"
+		AssertionError: An infinite set cannot be mapped
+
+
+To generate a set containing the power set of a set:
+
+	* use the power() method:
+
+		>>> s = set.Set((1,2,3))
+		>>> u = s.power()
+		>>> for s in u:
+		...     print s
+		... 
+		{ None : {1: 1, 2: 2, 3: 3} : {} }
+		{ None : {1: 1, 2: 2} : {} }
+		{ None : {1: 1} : {} }
+		{ None : {2: 2, 3: 3} : {} }
+		{ None : {2: 2} : {} }
+		{ None : {3: 3} : {} }
+
+	* use the P() method:
+
+		>>> u = s.P()
+		>>> for s in u:
+		...     print s
+		... 
+		{ None : {1: 1, 2: 2, 3: 3} : {} }
+		{ None : {1: 1, 2: 2} : {} }
+		{ None : {1: 1} : {} }
+		{ None : {2: 2, 3: 3} : {} }
+		{ None : {2: 2} : {} }
+		{ None : {3: 3} : {} }
+
+	Note that potentially infinite sets cannot have a power set:
+
+		>>> s = set.Set((-1,-2,-3), expr=lambda x: x > 0)
+		>>> u = s.P()
+		Traceback (most recent call last):
+	  	File "<stdin>", line 1, in ?
+		  File "set.py", line 818, in P
+		    return self.power()
+		  File "set.py", line 533, in power
+		    raise AssertionError, "An infinite set cannot be mapped"
+		AssertionError: An infinite set cannot be mapped
+
+
+To generate a set containing the mapping of a function to a set:
+
+	* use the map() method:
+
+		>>> s = set.Set((1,2,3))
+		>>> u = s.map(lambda x: x*2)
+		>>> print u
+		{ None : {1: 2, 2: 4, 3: 6} : {} }
+		>>> u = s.map(lambda x: x*4, get_key=lambda x: x/2)
+		>>> print u
+		{ None : {8: 4, 16: 8, 24: 12} : {} }
+
+	Note that the get_key parameter can be used to provide a
+	dictionary key for the object produced by the map function.
+	This means that the output set will have different keys than
+	the input set, as seen in the second example, and as such
+	will not be a true mapping. This is useful for generating
+	a set of (possibly unrelated) objects from another set of
+	objects.
+
+	Note that potentially infinite sets cannot be mapped:
+
+		>>> s = set.Set((-1,-2,-3), expr=lambda x: x > 0)
+		>>> u = s.map(lambda x: x*2)
+		Traceback (most recent call last):
+		  File "<stdin>", line 1, in ?
+		  File "set.py", line 558, in map
+		    raise AssertionError, "An infinite set cannot be mapped"
+		AssertionError: An infinite set cannot be mapped
+
+
+To iterate over the elements of a set:
+	
+	* use the python for ... in idiom:
+		>>> s = set.Set((1,2,3,4))
+		>>> for i in s:
+		...     print i
+		... 
+		1
+		2
+		3
+		4
+
+	* use the python builtin iter() function:
+		>>> s = set.Set((1,2,3,4))
+		>>> it = iter(s)
+		>>> while it:
+		...     try:
+		...             print it.next()
+		...     except StopIteration:
+		...             break
+		... 
+		1
+		2
+		3
+		4
+
+	Note that potentially infinite sets cannot be iterated over:
+
+		>>> s = set.Set((-1,-2,-3), expr=lambda x: x > 0)
+		SyntaxError: invalid syntax
+		>>> for i in s:   
+		...     print i
+		... 
+		Traceback (most recent call last):
+		  File "<stdin>", line 1, in ?
+		  File "set.py", line 797, in __iter__
+		    raise AssertionError, \
+		AssertionError: An infinite set has no iterator
+
+
+To replace a set with the union of itself and another set:
+
+	* use the |= operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> s |= t
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+
+	* use the += operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> s += t
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+
+	* use the update() method:
+
+		>>> s = set.Set((1,2,3))
+		>>> s.update(t)
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+
+
+To replace a set with the intersection of itself and another set:
+
+	* use the &= operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> s &= t
+		>>> print s
+		{ None : {3: 3} : {} }
+
+	* use the *= operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> s *= t
+		>>> print s
+		{ None : {3: 3} : {} }
+
+	* use the intersection_update() method:
+
+		>>> s = set.Set((1,2,3))
+		>>> s.intersection_update(t)
+		>>> print s
+		{ None : {3: 3} : {} }
+
+
+To replace a set with the difference of itself and another set:
+
+	* use the -= operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> s -= t
+		>>> print s
+		{ None : {1: 1, 2: 2} : {} }
+
+	* use the difference_update
+
+		>>> s = set.Set((1,2,3))
+		>>> s.difference_update(t)
+		>>> print s
+		{ None : {1: 1, 2: 2} : {} }
+
+
+To replace a set with the symmetric difference of itself and another set:
+
+	* use the ^= operator:
+
+		>>> s = set.Set((1,2,3))
+		>>> t = set.Set((3,4,5))
+		>>> s ^= t
+		>>> print s
+		{ None : {1: 1, 2: 2, 4: 4, 5: 5} : {} }
+
+	* use the symmetric difference_update
+
+		>>> s = set.Set((1,2,3))
+		>>> s.symmetric_difference_update(t)
+		>>> print s
+		{ None : {1: 1, 2: 2, 4: 4, 5: 5} : {} }
+
+
+To print the value of a set:
+
+	* use the python builtin print function
+
+		>>> s = set.Set((1,2,3,4,5))
+		>>> print s
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+		>>> s = set.Set((1,2,3,4,5), expr=lambda x: x > 10, \
+		    exclude=(12,14,16))
+		>>> print s
+		{ <function <lambda> at 0xb7d0d5a4> : {1: 1, 2: 2, 3: 3, 4: 4, 
+		  5: 5} : {16: 16, 12: 12, 14: 14} }
+		>>> s = set.Set(expr=lambda x: x > 10, exclude=(12,14,16))
+		>>> print s
+		{ <function <lambda> at 0xb7df0ca4> : {} : {16: 16, 12: 12, 
+		14: 14} }
+		>>> s = set.Set(expr=lambda x: x > 10)
+		>>> print s
+		{ <function <lambda> at 0xb7df0cdc> : {} : {} }
+
+	* use the python builtin str() function
+
+		>>> s = set.Set((1,2,3,4,5))
+		>>> tmp = str(s)
+		>>> print tmp
+		{ None : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5} : {} }
+
+
+
+===============================================================================
+Special sets
+
+	* EmptySet, the set of nothing
+
+	* UberSet, the set of everything
+
+	* Z, the set of all integers { ..., -1, 0, 1, ... }
+
+	* N, the set of all natural numbers { 1, 2, 3... }
+
+	* R, the set of all real numbers
+
+	* C, the set of all complex numbers
+
+	* S, the set of all sets
+
+
+
+===============================================================================
+Set Operator Summary
+
+	Operation	Arithmetic Operator	Logical Operator
+    ---------------------------------------------------------------
+    union			+			|
+    intersection		*			&
+    difference			-			n/a
+    symmetric difference	n/a			^
+    complement			n/a			~
+
+
+
+===============================================================================
+Combining Finite and Infinite Sets
+
+
+The output of an operation is a finite (F) or infinite (I) set depending 
+on the operation and whether the input sets A and B are finite or infinite:
+
+	Operation		A	B	     Output
+     ---------------------------------------------------------
+    union			I	I	|	I
+    union			I	F	|	I
+    union			F	I	|	I
+    union			F	F	|	F
+						|
+    intersection		I	I	|	I
+    intersection		I	F	|	F
+    intersection		F	I	|	F
+    intersection		F	F	|	F
+						|
+    difference			I	I	|	I
+    difference			I	F	|	I
+    difference			F	I	|	F
+    difference			F	F	|	F
+						|
+    symmetric difference	I	I	|	I
+    symmetric difference	I	F	|	I
+    symmetric difference	F	I	|	I
+    symmetric difference	F	F	|	F
+						|
+    complement			I	n/a	|	I
+    complement			F	n/a	|	F
+	
+
+
+When a set operation is performed on only infinite sets, the lambda of
+the output set is determined by the operation:
+
+	Operation			Lambda of Output Set
+    --------------------------------------------------------------------------
+    union			lambda x: A.lambda(x) or B.lambda(x)
+    intersection		lambda x: A.lambda(x) and B.lambda(x)
+    difference			lambda x: A.lambda(x) and not B.lambda(x)
+    symmetric difference	lambda x: (A.lambda(x) and not B.lambda(x)) or
+    				          (B.lambda(x) and not A.lambda(x))
+    complement			lambda x: not A.lambda(x)
+
+
+
+Certain operations are only permitted on finite sets; these operations
+require iteration over all elements of the set, which is not possible
+when the set is potentially infinite:
+
+	Operation		Finite Sets	Infinite Sets
+    --------------------------------------------------------------------------
+    union				Y		Y			
+    intersection			Y		Y
+    difference				Y		Y
+    symmetric difference		Y		Y
+    complement				Y		Y
+    equivalent				Y		N
+    disjoint				Y		N
+    direct product			Y		N
+    power				Y		N
+    map					Y		N
+    count				Y		N
+    iteration				Y		N
+
+Infinite sets are intended only for membership tests and for subset
+generation; they are not intended for set comparison or iteration.
+
+===============================================================================
+TODO
+
+	+ lazy evaluation
